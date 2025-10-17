@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aula — Detalle</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="app-bg">
+  <div class="app-shell single-shell">
+    <aside class="sidebar glass">
+      <button id="backBtn" class="nav-btn">← Volver</button>
+      <div class="muted small" id="userBadgeA"></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar glass">
+        <div>
+          <h1 id="aulaTitle">Aula</h1>
+          <p id="aulaSubtitle" class="muted"></p>
+        </div>
+        <div>
+          <button id="reserveBtn" class="btn btn-primary">Reservar aula</button>
+          <button id="endReserveBtn" class="btn btn-outline hidden">Finalizar reserva</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="card glass">
+          <h3>Recursos</h3>
+          <div id="resourcesGrid" class="resources-grid"></div>
+
+          <div class="form-row" style="margin-top:12px">
+            <input id="newResourceName" placeholder="Nombre recurso (ej. Mouse)" />
+            <input id="newResourceQty" type="number" min="1" value="1" style="width:90px" />
+            <button id="addResourceBtn" class="btn btn-primary">Agregar</button>
+          </div>
+        </div>
+
+        <div class="card glass" style="margin-top:12px">
+          <h3>Reportar daño</h3>
+          <label class="input-label">Descripción
+            <input id="damageDesc" placeholder="Descripción del daño">
+          </label>
+          <label class="input-label">Foto (opcional)
+            <input id="damageFile" type="file" accept="image/*" />
+          </label>
+          <button id="reportDamageBtn" class="btn btn-primary">Reportar daño</button>
+        </div>
+
+        <div class="card glass" style="margin-top:12px">
+          <h3>Movimientos y préstamos</h3>
+          <div id="borrowList"></div>
+        </div>
+
+        <div class="card glass" style="margin-top:12px">
+          <h3>Histórico del aula</h3>
+          <ul id="aulaHistory" style="max-height:200px;overflow:auto;padding-left:16px"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toastWrap" class="toast-wrap"></div>
+
+  <!-- Modal: Reservar -->
+  <div id="reserveModal" class="modal hidden">
+    <div class="modal-card card glass">
+      <h3>Reservar Aula</h3>
+      <label class="input-label">Curso
+        <input id="modalCourse" placeholder="Ej. Matemáticas 3A">
+      </label>
+      <label class="input-label">Inicio
+        <input id="modalStart" type="datetime-local">
+      </label>
+      <label class="input-label">Fin
+        <input id="modalEnd" type="datetime-local">
+      </label>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+        <button id="modalReserveSave" class="btn btn-primary">Reservar</button>
+        <button id="modalReserveCancel" class="btn btn-ghost">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Mover recurso -->
+  <div id="moveModal" class="modal hidden">
+    <div class="modal-card card glass">
+      <h3>Mover Recurso</h3>
+      <label class="input-label">Recurso
+        <input id="moveResourceName" readonly />
+      </label>
+      <label class="input-label">Cantidad
+        <input id="moveQty" type="number" min="1" value="1" />
+      </label>
+      <label class="input-label">Destino (ID aula)
+        <select id="moveToSelect"></select>
+      </label>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+        <button id="modalMoveSave" class="btn btn-primary">Mover</button>
+        <button id="modalMoveCancel" class="btn btn-ghost">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
