@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistema Aulas — Login</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="app-bg">
+  <div class="center-shell">
+    <div class="card glass login-card">
+      <img src="assets/logo.png" alt="Logo Intecap" class="login-logo">
+      <h1 class="brand-title">Sistema de Gestión de Aulas</h1>
+      <p class="muted">Inicia sesión o regístrate (demo: admin/tecnico/profesor)</p>
+
+      <label class="input-label">Usuario
+        <input id="loginUser" placeholder="usuario" />
+      </label>
+
+      <label class="input-label">Contraseña
+        <input id="loginPass" type="password" placeholder="contraseña" />
+      </label>
+
+      <label class="input-label">Rol
+        <select id="loginRole">
+          <option value="profesor">Profesor</option>
+          <option value="tecnico">Técnico</option>
+          <option value="admin">Admin</option>
+        </select>
+      </label>
+
+      <div class="actions-row">
+        <button id="loginBtn" class="btn btn-primary">Iniciar sesión</button>
+        <button id="registerBtn" class="btn btn-outline">Registrarme</button>
+        <button id="demoBtn" class="btn btn-ghost">Demo rápida</button>
+      </div>
+
+      <p class="muted small">Credenciales demo: <strong>admin/admin</strong>, <strong>tecnico/tecnico</strong>, <strong>profesor/profesor</strong></p>
+    </div>
+  </div>
+
+  <div id="toastWrap" class="toast-wrap"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

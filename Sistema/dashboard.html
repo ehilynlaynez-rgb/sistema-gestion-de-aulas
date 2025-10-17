@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <img src="assets/logo.png" alt="Logo Intecap" class="login-logo">
+  <title>Dashboard — Sistema Aulas</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="app-bg">
+  <div class="app-shell">
+    <aside class="sidebar glass">
+      <div class="brand">
+        <h2>Sistema Aulas</h2>
+        <p id="badgeUser" class="muted"></p>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-route="dashboard">Dashboard</button>
+        <button class="nav-btn" data-route="history">Histórico</button>
+        <button class="nav-btn" id="manageBtn">Gestionar aulas</button>
+        <button class="nav-btn" id="themeToggle">🌙 Dark</button>
+        <button class="nav-btn danger" id="logoutBtn">Cerrar sesión</button>
+      </nav>
+
+      <div class="sidebar-footer muted small">Majito · Proyecto</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar glass">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="muted">Mapa visual de módulos y aulas — estado en vivo</p>
+        </div>
+
+        <div class="controls">
+          <input id="searchInput" placeholder="Buscar aula o recurso..." />
+          <select id="filterOccupancy">
+            <option value="all">Todos</option>
+            <option value="occupied">Ocupadas</option>
+            <option value="free">Libres</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="content">
+        <div id="liveSummary" class="live-summary card glass"></div>
+
+        <div id="modulesContainer" class="modules-wrap"></div>
+
+        <hr />
+
+        <div id="historyPanel" class="card glass hidden">
+          <h3>Registro de actividad</h3>
+          <ul id="historyList" style="max-height:260px;overflow:auto;padding-left:16px"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toastWrap" class="toast-wrap"></div>
+
+  <!-- Modales (hidden, managed by JS) -->
+  <!-- none needed on dashboard -->
+
+  <script src="script.js"></script>
+</body>
+</html>

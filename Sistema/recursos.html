@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SGA — Recursos</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page container">
+    <header class="topbar">
+      <div>
+        <h1>Recursos</h1>
+        <p class="muted">Lista y estado de recursos por aula</p>
+      </div>
+      <nav class="nav-actions">
+        <a href="index.html" class="btn ghost">Inicio</a>
+        <a href="aula.html" class="btn">Aulas</a>
+        <button id="themeToggleRec" class="btn icon">🌙</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="list-section">
+        <div class="list-controls">
+          <button class="btn primary" onclick="bulkMarkDamaged()">Marcar seleccionados como dañados</button>
+          <button class="btn" onclick="bulkClearDamaged()">Marcar como OK</button>
+          <button class="btn" onclick="clearAll()">Limpiar todo</button>
+        </div>
+
+        <div id="resourcesList" class="list mt-4"></div>
+      </section>
+    </main>
+
+    <footer class="footer muted">SGA • Recursos</footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initApp();
+      document.getElementById('themeToggleRec').addEventListener('click', toggleTheme);
+    });
+  </script>
+</body>
+</html>
+
+
